@@ -1,0 +1,27 @@
+{
+  "approved_ids": [
+    "spino-fc4ic5fm",
+    "spino-aa1saqz8",
+    "spino-w8y1jb95",
+    "spino-hfvarvs1",
+    "spino-3dstz63n",
+    "spino-ybp2yrdj",
+    "spino-jimb6bw5",
+    "spino-5gjlfw71",
+    "spino-qegudhqx",
+    "spino-clc3m10k",
+    "spino-7j9cuckg",
+    "spino-tr6l2xu2",
+    "spino-eo3v1iey",
+    "spino-0m04a2ou",
+    "spino-vuxdin8h",
+    "spino-gruwq7id",
+    "spino-2pr5ps2z",
+    "spino-nxeex3cv",
+    "spino-9vbo6owr",
+    "spino-4s8x486e"
+  ],
+  "fetch_interval": 5000,
+  "max_score": 1000,
+  "min_score": -1000
+}
