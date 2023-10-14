@@ -17,10 +17,6 @@ const use = io => {
       
       clearInterval(scoreInterval);
     });
-
-    setTimeout(() => {
-      socket.disconnect(true);
-    }, [7500]);
   });
 };
 
