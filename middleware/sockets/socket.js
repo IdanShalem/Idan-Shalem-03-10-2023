@@ -8,7 +8,6 @@ const use = io => {
     let scoreInterval;
     scoreInterval = setInterval(() => {
       const score = generateScore();
-      console.log('score:', score)
       socket.emit("scoreUpdate", score);
     }, [polling_frequency]);
 

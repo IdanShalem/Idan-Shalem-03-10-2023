@@ -13,7 +13,6 @@ const ScoreBoard = () => {
   const { showSnackBar, SnackbarTypes } = useContext(MessagingContext);
 
   const handleScoreUpdate = useCallback((liveScore) => {
-    console.log('liveScore:', liveScore)
     setTimeout(() => {
       setColor("black");
     }, [1000]);
