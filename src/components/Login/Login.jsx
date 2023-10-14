@@ -21,7 +21,6 @@ const Login = () => {
     fetchUser.get(`/${userId}`)
       .then(res => {
         const isVerified = verifyUser(res?.data?.userId, res?.data?.AUTH_TOKEN);
-        console.log('isVerified:', isVerified)
         if(isVerified) {
           showSnackBar("User Verified", SnackbarTypes.SUCCESS_MESSAGE);
           navigate(`/`);
