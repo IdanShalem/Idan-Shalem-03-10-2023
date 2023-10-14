@@ -1,26 +1,23 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SocketContext } from "../../state/Socket/Socket"
 import ScoreBoard from "./ScoreBoard/ScoreBoard";
+import { UserContext } from "../../state/User/User";
 
 const Home = () => {
-
-  const [authorized, setAuthorized] = useState(false);
   let navigate = useNavigate();
   const location = useLocation();
   const socket = useContext(SocketContext);
+  const { authorized, disconnectUser } = useContext(UserContext);
 
   useEffect(() => {
-    const query = new URLSearchParams(location.search);
-    const isAuthorized = query.has("AUTH_TOKEN");
-    if(isAuthorized) {
-      setAuthorized(true);
+    if(authorized) {
       socket.connect();
     } else {
-      setAuthorized(false);
+      disconnectUser();
       navigate("/login");
     };
-  }, [authorized, location, navigate, socket]);
+  }, [authorized, location, navigate, socket, disconnectUser]);
 
   useEffect(() => {
     return () => {

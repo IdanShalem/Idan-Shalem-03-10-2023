@@ -9,7 +9,7 @@ const initialMessageState = {
   open: false,
 };
 
-const MessagingProvider = React.memo(({ children }) => {
+const MessagingProvider = ({ children }) => {
   const SnackbarTypes = {
     ERROR_MESSAGE: "errorMessage",
     SUCCESS_MESSAGE: "successMessage",
@@ -32,6 +32,6 @@ const MessagingProvider = React.memo(({ children }) => {
       {children}
     </MessagingContext.Provider>
   );
-});
+};
 
 export { MessagingContext, MessagingProvider };

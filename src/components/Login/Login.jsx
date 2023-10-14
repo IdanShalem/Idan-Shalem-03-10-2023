@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
 import { MessagingContext } from "../../state/Messaging/Messaging";
+import { UserContext } from "../../state/User/User";
 
 const Login = () => {
   const fetchUser = axios.create({
@@ -10,6 +11,7 @@ const Login = () => {
   });
 
   const { showSnackBar, SnackbarTypes } = useContext(MessagingContext);
+  const { verifyUser } = useContext(UserContext);
   const [userId, setUserId] = useState("");
   const navigate = useNavigate();
 
@@ -18,14 +20,14 @@ const Login = () => {
   const handleClick = () => {
     fetchUser.get(`/${userId}`)
       .then(res => {
-        const userId = res?.data?.userId;
-        const token = res?.data?.AUTH_TOKEN;
-        if(userId && token) {
+        const isVerified = verifyUser(res?.data?.userId, res?.data?.AUTH_TOKEN);
+        console.log('isVerified:', isVerified)
+        if(isVerified) {
           showSnackBar("User Verified", SnackbarTypes.SUCCESS_MESSAGE);
-          navigate(`/?AUTH_TOKEN=${token}`);
+          navigate(`/`);
         };
       })
-      .catch(err => showSnackBar(err.response.data, SnackbarTypes.ERROR_MESSAGE));
+      .catch(err => showSnackBar(err.response.data, SnackbarTypes.SUCCESS_MESSAGE));
   };
 
   return (
