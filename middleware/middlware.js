@@ -23,7 +23,7 @@ const io = new Server({
     origin: CORS_ORIGIN,
   }
 });
-io.listen(SOCKET_PORT)
+io.listen(SOCKET_PORT);
         
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

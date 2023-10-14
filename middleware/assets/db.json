@@ -21,7 +21,7 @@
     "spino-9vbo6owr",
     "spino-4s8x486e"
   ],
-  "fetch_interval": 5000,
+  "polling_frequency": 5000,
   "max_score": 1000,
   "min_score": -1000
 }
