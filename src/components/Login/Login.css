@@ -27,8 +27,11 @@ label {
 
 input {
   font-size: 18px;
+  margin-top: 15px;
 }
 
 #submit-button {
-  width: 200px;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 20px;
 }
