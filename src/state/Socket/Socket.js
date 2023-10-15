@@ -1,7 +1,7 @@
 import React from "react";
 import { io } from "socket.io-client";
 
-const url = "http://localhost:3002";
+const url = "https://idan-shalem-spinomenal-3d79fbd337f3.herokuapp.com/";
 
 const socket = io(url, {
   withCredentials: true,
