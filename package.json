@@ -22,9 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "launch": "react-scripts start",
-    "middleware": "node middleware/middleware.js",
-    "start": "run-p middleware launch",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
