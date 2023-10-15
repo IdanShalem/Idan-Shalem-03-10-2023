@@ -2,6 +2,7 @@
   "name": "spinomenal-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "127.0.0.1:4000",
   "engines": {
     "node": "14.17.6"
   },
