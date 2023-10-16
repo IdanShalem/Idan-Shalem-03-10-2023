@@ -15,16 +15,13 @@ const routes = require('./routes/routes');
 // Socket
 const sockets = require("./sockets/socket");
 
-const { Server } = require("socket.io");
-const http = require('http');
-const server = http.createServer(app);
-const io = new Server({
-  server,
+const server = app.listen(MIDDLEWARE_PORT, () => console.log("Server is up... on port " + MIDDLEWARE_PORT));
+const io = require("socket.io")(server, {
+  pingTimeout: 60000,
   cors: {
-    origin: CORS_ORIGIN,
+    origin: CORS_ORIGIN
   }
 });
-io.listen(SOCKET_PORT);
         
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -55,4 +52,4 @@ if(process.env.NODE_ENV === "production") {
 };
 
 
-app.listen(MIDDLEWARE_PORT, () => console.log("Server is up... on port " + MIDDLEWARE_PORT));
+// app.listen(MIDDLEWARE_PORT, () => console.log("Server is up... on port " + MIDDLEWARE_PORT));
