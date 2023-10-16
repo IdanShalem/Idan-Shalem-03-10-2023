@@ -7,7 +7,7 @@ const path = require("path")
 const cors = require("cors");
 
 // ENV Variables
-const { MIDDLEWARE_PORT, SOCKET_PORT, CORS_ORIGIN } = require("./config");
+const { MIDDLEWARE_PORT, CORS_ORIGIN } = require("./config");
 
 // App Routes
 const routes = require('./routes/routes');
@@ -15,7 +15,7 @@ const routes = require('./routes/routes');
 // Socket
 const sockets = require("./sockets/socket");
 
-const server = app.listen(MIDDLEWARE_PORT, () => console.log("Server is up... on port " + MIDDLEWARE_PORT));
+const server = app.listen(MIDDLEWARE_PORT, () => console.log("Server is up... on port " + MIDDLEWARE_PORT || 5000));
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
