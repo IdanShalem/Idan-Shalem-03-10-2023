@@ -26,7 +26,7 @@ const Login = () => {
           navigate(`/`);
         };
       })
-      .catch(err => showSnackBar(err?.response?.data, SnackbarTypes.SUCCESS_MESSAGE));
+      .catch(err => showSnackBar(err?.response?.data, SnackbarTypes.ERROR_MESSAGE));
   };
 
   return (
