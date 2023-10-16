@@ -7,7 +7,7 @@ import { UserContext } from "../../state/User/User";
 
 const Login = () => {
   const fetchUser = axios.create({
-    baseURL: "http://localhost:5000/user"
+    baseURL: "https://spinomenal-idan-shalem.onrender.com/"
   });
 
   const { showSnackBar, SnackbarTypes } = useContext(MessagingContext);
